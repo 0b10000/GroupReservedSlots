@@ -21,4 +21,4 @@ For example:
 
 ```[DEBUG] [GroupReservedSlots] [REDACTED]@steam: owner | True```
 
-`owner` is the group, and `True` indicates that players in the `owner` group get a reserved slot.
+`owner` is the group, and `True` indicates that players in the `owner` group get a reserved slot (or have a reserved slot in the reserved slots file).
