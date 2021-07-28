@@ -7,7 +7,7 @@ namespace GroupReservedSlots
     public class Config : IConfig
     {
         [Description("Whether or not this plugin is enabled.")]
-        public bool IsEnabled { get; set; }
+        public bool IsEnabled { get; set; } = true;
 
         [Description("Group names that should get reserved slots")]
         public List<string> ReservedGroups { get; set; } = new List<string>()
