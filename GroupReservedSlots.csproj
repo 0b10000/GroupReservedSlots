@@ -37,10 +37,10 @@
           <Private>True</Private>
         </Reference>
         <Reference Include="Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
-          <HintPath>..\..\References\Assembly-CSharp-Publicized.dll</HintPath>
+          <HintPath>$(EXILED_REFERENCES)\Assembly-CSharp-Publicized.dll</HintPath>
         </Reference>
         <Reference Include="Assembly-CSharp-firstpass, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
-          <HintPath>..\..\References\Assembly-CSharp-firstpass.dll</HintPath>
+          <HintPath>$(EXILED_REFERENCES)\Assembly-CSharp-firstpass.dll</HintPath>
         </Reference>
         <Reference Include="Exiled.API, Version=2.11.1.0, Culture=neutral, PublicKeyToken=null">
           <HintPath>packages\EXILED.2.11.1\lib\net472\Exiled.API.dll</HintPath>
