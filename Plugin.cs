@@ -26,7 +26,8 @@ namespace GroupReservedSlots
 
         public static Plugin Instance;
 
-        private Plugin() {
+        // ReSharper disable once EmptyConstructor
+        public Plugin() {
         }
 
         public override void OnEnabled()
