@@ -10,7 +10,7 @@ namespace GroupReservedSlots
         public override string Author => "0b10000";
         public override string Name => "GroupReservedSlots";
         public override string Prefix => "GroupReservedSlots";
-        public override Version Version { get; } = new Version(1, 0, 2);
+        public override Version Version { get; } = new Version(1, 0, 3);
         public override Version RequiredExiledVersion { get; } = new Version(2, 11, 1);
 
         public Harmony Harmony { get; private set; }
