@@ -1,7 +1,5 @@
 using System;
 using Exiled.API.Features;
-using HarmonyLib;
-// ReSharper disable StringLiteralTypo
 
 namespace GroupReservedSlots
 {
@@ -10,12 +8,12 @@ namespace GroupReservedSlots
         public override string Author => "0b10000";
         public override string Name => "GroupReservedSlots";
         public override string Prefix => "GroupReservedSlots";
-        public override Version Version { get; } = new Version(1, 0, 3);
-        public override Version RequiredExiledVersion { get; } = new Version(2, 11, 1);
-
-        public Harmony Harmony { get; private set; }
-
+        public override Version Version { get; } = new Version(2, 0, 0);
+        public override Version RequiredExiledVersion { get; } = new Version(3, 0, 0);
+        
         public static Plugin Instance;
+
+        private EventHandlers _handler;
 
         // ReSharper disable once EmptyConstructor
         public Plugin() {
@@ -24,8 +22,10 @@ namespace GroupReservedSlots
         public override void OnEnabled()
         {
             Instance = this;
+            _handler = new EventHandlers();
+
+            Exiled.Events.Handlers.Player.PreAuthenticating += _handler.OnPreAuthenticating;
             
-            Patch();
             base.OnEnabled();
         }
 
@@ -33,30 +33,9 @@ namespace GroupReservedSlots
         {
             Instance = null;
             
-            Unpatch();
+            Exiled.Events.Handlers.Player.PreAuthenticating -= _handler.OnPreAuthenticating;
+            
             base.OnDisabled();
-        }
-        
-        private void Patch()
-        {
-            try
-            {
-                Harmony = new Harmony("0b10000.groupreservedslots");
-
-                Harmony.PatchAll();
-
-                Log.Info("Patched successfully!");
-            }
-            catch (Exception e)
-            {
-                Log.Error($"Exception occured during patching: {e}");
-            }
-        }
-
-        private void Unpatch()
-        {
-            Harmony.UnpatchAll();
-            Log.Info("Unpatched patches!");
         }
     }
 }
