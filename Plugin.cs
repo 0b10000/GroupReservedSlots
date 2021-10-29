@@ -8,7 +8,7 @@ namespace GroupReservedSlots
         public override string Author => "0b10000";
         public override string Name => "GroupReservedSlots";
         public override string Prefix => "GroupReservedSlots";
-        public override Version Version { get; } = new Version(2, 0, 1);
+        public override Version Version { get; } = new Version(2, 0, 4);
         public override Version RequiredExiledVersion { get; } = new Version(3, 0, 0);
         
         public static Plugin Instance;
