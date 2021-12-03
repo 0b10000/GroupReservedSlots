@@ -10,9 +10,10 @@ namespace GroupReservedSlots
         {
             var group = Server.PermissionsHandler.GetUserGroup(ev.UserId);
             if (group == null) return;
-            if (Plugin.Instance.Config.ReservedGroups.Contains(group
-                .GetKey())) ev.IsAllowed = true;
-            Log.Debug($"{ev.UserId}: ${group} | {ev.IsAllowed}");
+
+            bool reserved = Plugin.Instance.Config.ReservedGroups.Contains(group.GetKey());
+            if (reserved) ev.IsAllowed = true;
+            Log.Debug($"{ev.UserId}: {group.GetKey()} | {reserved}", Plugin.Instance.Config.Debug);
         }
     }
 }
