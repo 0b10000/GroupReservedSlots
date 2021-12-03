@@ -2,6 +2,8 @@
 
 This EXILED plugin automatically gives groups that you specify a reserved slot on your server. It also respects the reserved slot file, if you want to use that too.
 
+[![Github All Releases](https://img.shields.io/github/downloads/0b10000/GroupReservedSlots/total.svg)](https://github.com/0b10000/GroupReservedSlots/releases)
+
 ## Configs
 ```yml
 GroupReservedSlots:
